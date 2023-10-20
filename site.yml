@@ -1,0 +1,7 @@
+---
+
+- hosts:
+  - cpu
+  - disk
+  - memory
+  - network

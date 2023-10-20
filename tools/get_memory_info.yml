@@ -1,0 +1,10 @@
+---
+
+- name: 获取内存大小
+  hosts: all
+  gather_facts: yes
+  tasks:
+    - name: 打印内存大小
+      debug:
+        #msg: "主机 {{ inventory_hostname }} 的内存大小是 {{ ansible_facts['ansible_memory_mb']['real']['total'] | default('未定义') }} MB"
+        msg: "{{ ansible_facts['fqdn'] }}, {{ ansible_facts['memory_mb']['real']['total'] }},"

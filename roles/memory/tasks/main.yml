@@ -1,2 +1,12 @@
 ---
 # tasks file for memory
+
+- name: Get Memory Size
+  hosts: your_target_host
+  tasks:
+    - name: Gather facts
+      ansible.builtin.setup
+
+    - name: Display Memory Size
+      debug:
+        var: ansible_facts['ansible_memory_mb']['real']['total']
