@@ -1,0 +1,18 @@
+---
+
+- name: get systeminfo
+  hosts: all
+  gather_facts: yes
+  tasks:
+    - name: Print FQDN Information
+      debug:
+        msg: "FQDN: {{ ansible_facts['fqdn'] }}"
+
+    - name: Print memory Information
+      debug:
+        msg: "内存总量(MB): {{ ansible_facts['memory_mb']['real']['total'] }}"
+
+    - name: Print CPU Information
+      debug:
+        msg: "处理器型号: {{ ansible_facts['processor'][2] }}, CPU物理核心数量: {{ ansible_facts['processor_cores'] }}, CPU处理器的数量: {{ ansible_facts['processor_count'] }}"
+
