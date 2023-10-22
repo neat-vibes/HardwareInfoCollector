@@ -11,6 +11,7 @@
     - name: Print memory Information
       debug:
         msg: "内存总量(MB): {{ ansible_facts['memory_mb']['real']['total'] }}"
+      tags: memory
 
     - name: Print CPU Information
       debug:
